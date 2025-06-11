@@ -1,0 +1,131 @@
+
+body {
+  margin: 0;
+  padding: 0;
+ background-image: url("");
+  font-family: "Segoe UI", sans-serif;
+  min-height: 100vh;
+}
+
+.todo-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.todo-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #6a0572;
+  margin-bottom: 25px;
+}
+
+
+.todo-subtitle {
+  font-size: 22px;
+  color: #6a0572;
+  margin-top: 30px;
+  border-bottom: 2px dashed #d0c2ff;
+  padding-bottom: 8px;
+}
+
+
+.todo-input {
+  width: 65%;
+  padding: 12px;
+  border: 2px solid #8e24aa;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: border 0.3s ease;
+}
+ul {
+  list-style-type: none;
+  
+}
+
+.todo-input:focus {
+  outline: none;
+  border-color: #c158dc;
+}
+
+.todo-button {
+  width: 25%;
+  padding: 12px;
+  background-color: #6a0572;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+
+.todo-button:hover {
+  background-color: #a11fb9;
+  transform: scale(1.05);
+}
+
+.todo-item {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background-color: #f3e9fc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px dashed #ccc;
+}
+
+
+.task-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 16px;
+  background-color: #fdfcff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(19, 14, 19, 0.08);
+}
+
+.Total-task,
+.Completed-task,
+.Pending-task {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 14px;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.Total-task {
+  color: #fff;
+  background: linear-gradient(135deg, #51ccdf, #9c27b0);
+}
+
+.Completed-task {
+  color: #fff;
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+}
+
+.Pending-task {
+  color: #fff;
+  background: linear-gradient(135deg, #c62828, #e53935);
+}
+
+.Total-task:hover,
+.Completed-task:hover,
+.Pending-task:hover {
+  transform: scale(1.05);
+}
