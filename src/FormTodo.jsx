@@ -8,6 +8,7 @@ export default function FormTodo() {
     const [taskList, setTaskList] = useState([]);
 
     function onSubmit(data) {
+
         if (data.tasks !== "") {
             console.log(taskList)
             const taskObj = {
@@ -15,8 +16,30 @@ export default function FormTodo() {
                 completed: false,
             }
             setTaskList([...taskList, taskObj]);
+            
 
+
+fetch("https://api.freeapi.app/api/v1/todos/", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(taskObj),
+        })
+            .then(response => response.json())
+        .then((result) => {
+                console.log("Task successfully posted to API:", result);
+            })
+      .catch((error) => {
+                console.error("Error posting task:", error);
+            });
         }
+        
+
+
+
+
+
     }
     function handleTaskCompletion(index) {
         let tempTask = [...taskList];
@@ -38,16 +61,17 @@ export default function FormTodo() {
 
                     <h3 className="todo-title"> TODO LIST</h3>
                     <div className='task-detail'>
-                    <h3 className='Total-task'>TOATAL TASKS:{TotalTask}</h3>
-                    <h3 className='Completed-task'>COMPLETED TASKS:{completedTask.length}</h3>
-                    <h3 className='Pending-task'>PENDING TASKS:{pendingTask.length}</h3>
-</div>
+                        <h3 className='Total-task'>TOATAL TASKS:{TotalTask}</h3>
+                        <h3 className='Completed-task'>COMPLETED TASKS:{completedTask.length}</h3>
+                        <h3 className='Pending-task'>PENDING TASKS:{pendingTask.length}</h3>
+                    </div>
 
 
                     <input className="todo-input" type='text' placeholder='Type the task here' {...register("tasks", { required: "Task is required" })} />
                     <p>{errors.tasks ? errors.tasks.message : ""}</p>
+                    <div>
                     <button className="todo-button" type='submit' >ADD</button>
-
+</div>
                 </form>
                 <section>
 
@@ -63,8 +87,8 @@ export default function FormTodo() {
                                         checked={task.completed}
                                         onChange={() => handleTaskCompletion(index)}
                                     />
-                                    <span style={{textDecoration: task.completed ? 'line-through' : 'none'}}>
-                                    {task.title}</span></li>)
+                                    <span className='task-show' style={{ textDecoration: task.completed ? 'line-through' : 'none' }}>
+                                        {task.title}</span></li>)
 
                             })
                         }

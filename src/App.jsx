@@ -1,17 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, createContext } from 'react'
 import './App.css'
 import FormTodo from './FormTodo'
-
+import { BrowserRouter, Route, Routes, Link, Outlet } from "react-router-dom"
+import Login from './login'
+import SignUp from './Signup'
+import Testing from './Testing'
+import FirstChild from './FirstChild'
+import SecondChild from './SecondChild'
+export const TaskContext = createContext();
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-  <FormTodo/>
+    <TaskContext>
+    <FirstChild />
+    <SecondChild/>
+    </TaskContext>
  
-  </>
+      {/* <BrowserRouter>
+
+        <Routes>
+          <Route path="/" element={<SignUp />} />
+            <Route path="/Login" element={<Login />} />
+          <Route path="/FormTodo" element={<FormTodo />} />
+          {/* <Route path='/testing' element={<Testing/>} /> */}
+        {/* </Routes>
+          
+      </BrowserRouter> */} 
+    </>
   )
 }
 
