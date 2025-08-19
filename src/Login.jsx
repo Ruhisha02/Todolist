@@ -34,6 +34,7 @@ export default function Login() {
       if (response.ok) {
         localStorage.setItem("token",result.token)
         console.log(result.message); 
+          navigate("/FormTodo");
           
       } else {
         console.error(result.error); 
@@ -44,7 +45,7 @@ export default function Login() {
         } catch (error) {
             console.error(error);
         }
-  navigate("/FormTodo");   
+   
 
     }
 
