@@ -31,7 +31,7 @@ export default function Login() {
       const response = await fetch(url, options);
       const result = await response.json();
 
-      if (response.ok) {
+      if (result.ok) {
         localStorage.setItem("token",result.token)
         console.log(result.message); 
           navigate("/FormTodo");
