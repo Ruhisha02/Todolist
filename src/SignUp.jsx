@@ -11,7 +11,7 @@ export default function SignUp(){
             return;
             
         }
-        const url = 'http://localhost:4000/signup';
+        const url = 'https://todo-backend-production-444a.up.railway.app/signup';
 const options = {
   method: 'POST',
   headers: {accept: 'application/json', 'content-type': 'application/json'},

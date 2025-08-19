@@ -13,7 +13,7 @@ export default function Login() {
             console.log("Fields cannot be empty");
             return;
         }
-        const url = 'http://localhost:4000/login';
+        const url = 'https://todo-backend-production-444a.up.railway.app/login';
 
         const options = {
             method: 'POST',

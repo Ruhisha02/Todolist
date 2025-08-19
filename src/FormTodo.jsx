@@ -23,7 +23,7 @@ export default function FormTodo() {
 const token = localStorage.getItem("token");
 console.log("Token being sent:", token);
 
-fetch("http://localhost:4000/task", {
+fetch("https://todo-backend-production-444a.up.railway.app/task", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -54,7 +54,7 @@ fetch("http://localhost:4000/task", {
         console.log(tempTask)
         setTaskList(tempTask)
 
-         fetch(`http://localhost:4000/task/${tempTask[index].id}`, {
+         fetch(`https://todo-backend-production-444a.up.railway.app/task/${tempTask[index].id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -87,7 +87,7 @@ fetch("http://localhost:4000/task", {
     const token = localStorage.getItem("token");
 console.log("Token being sent:", token);
 
-        fetch("http://localhost:4000/task", {
+        fetch("https://todo-backend-production-444a.up.railway.app/task", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -106,7 +106,7 @@ console.log("Token being sent:", token);
         }
          
    function handleDeleteTask(id) {
-    fetch(`http://localhost:4000/task/${id}`, {
+    fetch(`https://todo-backend-production-444a.up.railway.app/task/${id}`, {
             method: "DELETE",
             headers: { "Content-Type": "application/json" }
         })
